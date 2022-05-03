@@ -1,0 +1,78 @@
+<view class="container">
+    <scroll-view class="list-view fill-parent" scrollY="{{true}}">
+        <swiper autoplay="{{true}}" circular="true" class="top-bannar" duration="{{500}}" indicatorDots="{{false}}" interval="{{4000}}">
+            <swiper-item wx:for="{{2}}" wx:key="*this">
+                <view class="center top-image-group fill-parent">
+                    <image bindtap="__e" class="top-image fill-parent" data-event-opts="{{[ [ 'tap',[ [ 'bannerClick',['$0'],[ [ ['topBannerList','',index] ] ] ] ] ] ]}}" mode="aspectFill" src="../../static/img/banner/{{index}}.jpg"></image>
+                </view>
+            </swiper-item>
+        </swiper>
+        <view class="content-group vertical">
+            <view class="member-group basic-style center basic-box-shadow">
+                <view class="flex justify-between vertical-center" style="width:100%;" wx:if="{{userInfo==''||userInfo==nulll}}">
+                    <view>
+                        <image src="https://image.streffy.com/StreffyAdminImage/cbd/img/cha_log.png" style="width:192rpx;height:64rpx;"></image>
+                    </view>
+                    <view bindtap="doLogin" class="login-button themeTextColor themeBorderColor">登录/注册</view>
+                </view>
+                <view class="flex justify-between vertical-center" style="width:100%;" wx:else>
+                    <view class="member-icon-name-group horizontal">
+                        <view class="member-icon gone">
+                            <image class="fill-parent user-icon" src="{{userInfo.avatarUrl==null||userInfo.avatarUrl==''?'https://image.streffy.com/StreffyAdminImage/cbd/img/nolog.png':userInfo.avatarUrl}}"></image>
+                        </view>
+                        <view class="member-name-group">
+                            <view class="member-name">
+                                <text>{{userInfo.nickName}}</text>
+                            </view>
+                            <text class="member-grade themeTwoBgColor themeTextColor">{{levelName}}</text>
+                        </view>
+                    </view>
+                    <view class="flex horizontal">
+                        <view bindtap="__e" class="member-button center vertical">
+                            <view class="member-button-desc">{{userInfo.memberScore}}</view>
+                            <view class="member-button-title">积分</view>
+                        </view>
+                        <!-- <view bindtap="__e" class="member-button center vertical" data-event-opts="{{[ [ 'tap',[ [ 'goCoupon',['$event'] ] ] ] ]}}">
+                            <view class="member-button-desc">{{''+(memberInfo!=null&&memberInfo.couponList!=null?memberInfo.couponList.length:0)+''}}</view>
+                            <view class="member-button-title">优惠券</view>
+                        </view> -->
+                    </view>
+                </view>
+            </view>
+            <view class="order-button-group horizontal basic-style basic-box-shadow">
+                <view bindtap="goStore" class="order-button vertical center">
+                    <image class="order-button-img" src="https://image.streffy.com/splus/images/p_10_1644315830632.png"></image>
+                    <view class="order-button-title">立即点单</view>
+                    <view class="order-button-desc">即刻点餐，立享优惠</view>
+                    <view class="right-line"></view>
+                </view>
+                <view bindtap="goStore" class="order-button vertical center">
+                    <image class="order-button-img" src="https://image.streffy.com/splus/images/p_10_1644315834316.png"></image>
+                    <view class="order-button-title">外卖</view>
+                    <view class="order-button-desc">无接触，放心点</view>
+                </view>
+            </view>
+            <view class="point-shopping-mall-group basic-style flex justify-between">
+                <view class="city-group vertical basic-box-shadow">
+                    <view class="point-shopping-mall-title">非常好喝</view>
+                    <view class="point-shopping-mall-desc">喝点好喝奶茶</view>
+                    <image class="point-button-img" src="https://image.streffy.com/StreffyAdminImage/cbd/img/index_c_left.png"></image>
+                </view>
+                <view class="city-group vertical basic-box-shadow">
+                    <view class="point-shopping-mall-title">快来点吧</view>
+                    <view class="point-shopping-mall-desc">此处招商</view>
+                    <image class="point-button-img" src="https://image.streffy.com/StreffyAdminImage/cbd/img/index_c_right.png"></image>
+                </view>
+            </view>
+            <view style="height:310rpx;width:100%;margin-bottom:60rpx;">
+                <swiper autoplay="{{true}}" circular="true" class="fill-parent" duration="{{500}}" indicatorDots="{{false}}" interval="{{4000}}">
+                    <swiper-item class="bootom-banner" wx:for="{{1}}">
+                        <view class="fill-parent center">
+                            <image bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'bannerClick',['$0'],[ [ ['bottomBannerList','',index] ] ] ] ] ] ]}}" mode="scaleToFill" src="../../static/img/banner/bottom.png" style="border-radius:16rpx;width:92%;height:100%;"></image>
+                        </view>
+                    </swiper-item>
+                </swiper>
+            </view>
+        </view>
+    </scroll-view>
+</view>

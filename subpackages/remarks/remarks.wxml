@@ -1,0 +1,8 @@
+<view class="container" style="background-color:#FFFFFF;">
+    <view class="whiteBg" style="height:30%;width:100%;">
+        <view class="basicsStyle">
+            <textarea autoFocus="{{true}}"  bindinput="inputRemarks" class="remarksStyle maxlength=50" placeholder="口味、包装等要求" placeholderStyle="color:#CCCCCC;" value="{{remarks}}"></textarea>
+        </view>
+        <view bindtap="confirm" class="{{['collocationTextColor','center','confirm',remarkLength>0?'themeBgColor':'uncheck']}}">提交</view>
+    </view>
+</view>

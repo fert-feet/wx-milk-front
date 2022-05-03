@@ -1,0 +1,60 @@
+{
+        "setting": {},
+        "condition": {
+                "plugin": {
+                        "list": []
+                },
+                "game": {
+                        "list": []
+                },
+                "gamePlugin": {
+                        "list": []
+                },
+                "miniprogram": {
+                        "list": [
+                                {
+                                        "name": "",
+                                        "pathName": "pages/Store/Store",
+                                        "query": "",
+                                        "launchMode": "default",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "",
+                                        "pathName": "pages/order/order",
+                                        "query": "",
+                                        "launchMode": "default",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "",
+                                        "pathName": "pages/menu/menu",
+                                        "query": "",
+                                        "launchMode": "default",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "",
+                                        "pathName": "pages/confirmOrder/confirmOrder",
+                                        "query": "",
+                                        "launchMode": "default",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "",
+                                        "pathName": "subpackages/orderDetails/orderDetails",
+                                        "query": "",
+                                        "launchMode": "default",
+                                        "scene": null
+                                },
+                                {
+                                        "name": "",
+                                        "pathName": "pages/extendIndex/extendIndex",
+                                        "query": "",
+                                        "scene": null,
+                                        "launchMode": "default"
+                                }
+                        ]
+                }
+        }
+}

@@ -1,0 +1,125 @@
+<view class="container whiteBg">
+    <view class="topView horizontal">
+        <view bindtap="titleClick" class="{{['titleView','center',item.type==current?'choiceTitleTextStyle':'unChoiceTitleTextStyle']}}" wx:for="{{titelList}}">{{''+item.title+''}}<view class="bottomLine1" style="{{item.type==current?'width:60rpx;':'width:0%;'}}"></view>
+        </view>
+    </view>
+    <view class="content-group vertical">
+        <view class="swiper-wrap">
+            <swiper bindchange="__e" circular="{{false}}" class="fill-parent" current="{{current}}" data-event-opts="{{[ [ 'change',[ [ 'swiperChange',['$event'] ] ] ] ]}}" displayMultipleItems="1">
+                <swiper-item>
+                    <scroll-view bindscrolltoupper="__e" class="fill-parent" data-event-opts="{{[ [ 'scrolltoupper',[ ['allOrderScrollTop'] ] ] ]}}" scrollY="{{true}}">
+                        <view class="fill-parent">
+                            <view class="no-order-view-group center vertical" wx:if="{{orderlist==null||orderlist.length==0}}">
+                                <image mode="widthFix" src="https://image.streffy.com/splus/images/p_10_1644313985785.png" style="width:248rpx;height:288rpx;margin-top:20%;"></image>
+                                <view style="margin-top:0rpx;">您还没有历史订单</view>
+                                <view style="margin-top:10rpx;">快去选择一杯喜欢的饮品吧~</view>
+                            </view>
+                            <view class="basic-style" style="margin-bottom:30rpx;" wx:if="{{orderlist!=null&&orderlist.length>0}}" wx:for="{{orderlist}}" wx:for-item="orderItem" wx:for-index="index">
+                                <view bindtap="toOrderDetail" data-index="{{index}}" class="vertical order-info-group data-v-0b3b0595">
+                                    <view class="flex justify-between vertical-center data-v-0b3b0595">
+                                        <view class="flex justify-content-start vertical-center data-v-0b3b0595" style="width:75%;">
+                                            <view class="themeTwoBgColor themeTextColor type-style data-v-0b3b0595">自提</view>
+                                            <view class="store-name textGone data-v-0b3b0595" style="max-width:80%;">{{orderItem.storeName}}</view>
+                                        </view>
+                                        <view class="horizontal vertical-center data-v-0b3b0595">
+                                            <view class="data-v-0b3b0595" style="color:#333333;font-size:24rpx;line-height:24rpx;">{{orderItem.stateName}}</view>
+                                            <image class="data-v-0b3b0595" src="https://image.streffy.com/splus/images/p_4_1630724635275.png" style="height:24rpx;width:24rpx;margin-left:12rpx;margin-right:-6rpx;"></image>
+                                        </view>
+                                    </view>
+                                    <view class="order-time-text-desc data-v-0b3b0595">{{'下单时间：'+orderItem.orderTime+''}}</view>
+                                    <view class="order-take-num-group flex justify-between vertical-center data-v-0b3b0595" wx:if="{{orderItem.isShowTackNumUi!=null&&orderItem.isShowTackNumUi}}">
+                                        <view class="vertical data-v-0b3b0595">
+                                            <view class="take-num-ui-text themeTextColor data-v-0b3b0595">{{orderItem.takeNumber==null||orderItem.takeNumber>=10000?'暂无':orderItem.takeNumber}}</view>
+                                            <view class="take-num-ui-desc data-v-0b3b0595">请稍后凭取餐码进行取餐～</view>
+                                        </view>
+                                        <view class="horizontal data-v-0b3b0595">
+                                            <image catchtap="__e" class="data-v-0b3b0595" data-event-opts="{{[ [ 'tap',[ [ 'callPhone',['$0'],['orderItem.hotLine'] ] ] ] ]}}" src="../../static/img/tel.png" style="width:36rpx;height:36rpx;"></image>
+                                            <image catchtap="__e" class="data-v-0b3b0595" data-event-opts="{{[ [ 'tap',[ [ 'navigationGoStore',['$0'],['orderItem'] ] ] ] ]}}" src="../../static/img/position.png" style="width:36rpx;height:36rpx;margin-left:20rpx;"></image>
+                                        </view>
+                                    </view>
+                                    <view class="order-content-group flex justify-between data-v-0b3b0595">
+                                        <view class="horizontal data-v-0b3b0595" style="width:65%;">
+                                            <view class="data-v-0b3b0595" style="height:100rpx;width:100rpx;margin-right:20rpx;" wx:if="{{index<=2}}" wx:for="{{orderItem.productDetail}}" wx:for-item="foodItem">
+                                                <image class="fill-parent data-v-0b3b0595" src="{{foodItem.imgUrl}}" style="border-radius:8rpx;"></image>
+                                            </view>
+                                        </view>
+                                        <view class="vertical data-v-0b3b0595">
+                                            <view class="data-v-0b3b0595" style="text-align:right;margin-top:20rpx;font-size:24rpx;color:#999999;">{{'共'+orderItem.sumNum+'件'}}</view>
+                                            <view class="data-v-0b3b0595" style="text-align:right;margin-top:2rpx;font-size:24rpx;color:#666666;">合计：<text class="data-v-0b3b0595" style="color:#333333;font-size:32rpx;">{{'￥'+orderItem.orderTotal}}</text>
+                                            </view>
+                                        </view>
+                                    </view>
+                                    <view class="flex justify-between data-v-0b3b0595" style="margin-top:30rpx;">
+                                        <view class="data-v-0b3b0595"></view>
+                                        <view class="horizontal data-v-0b3b0595">
+                                            <view class="themeBgColor collocationTextColor center basic-style-button data-v-0b3b0595" data-event-opts="{{[ [ 'tap',[ ['reStartCreateOrder'] ] ] ]}}" wx:if="{{orderItem.status==18||orderItem.status==21||orderItem.status==26||orderItem.status==101}}">感谢购买</view>
+                                            <view catchtap="__e" class="center basic-style-button themeTextColor themeBorderColor data-v-0b3b0595" data-event-opts="{{[ [ 'tap',[ ['delOrder'] ] ] ]}}" wx:if="{{orderItem.status==9999||orderItem.status==118}}">删除订单</view>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </scroll-view>
+                </swiper-item>
+                <swiper-item>
+                    <scroll-view scrollY="{{true}}" style="height:100%;width:100%;background-color:#F8F8F8;">
+                        <view class="fill-parent">
+                            <view class="no-order-view-group center vertical" wx:if="{{todayOrderList==null||todayOrderList.length==0}}">
+                                <image mode="widthFix" src="https://image.streffy.com/splus/images/p_10_1644313985785.png" style="width:248rpx;height:288rpx;margin-top:20%;"></image>
+                                <view style="margin-top:0rpx;">您今天还没有下单</view>
+                                <view style="margin-top:10rpx;">快去选择一杯喜欢的饮品吧~</view>
+                                <view bindtap="__e" class="center go-menu-button themeBgColor" data-event-opts="{{[ [ 'tap',[ [ 'goMenu',['$event'] ] ] ] ]}}" wx:if="{{false}}">
+                                    <text>去下单</text>
+                                </view>
+                            </view>
+                            <view class="basic-style" style="margin-bottom:30rpx;" wx:if="{{todayOrderList!=null&&todayOrderList.length>0}}" wx:for="{{todayOrderList}}" wx:for-item="orderItem" wx:for-index="index">
+                                <view bindtap="toOrderDetail" data-index="{{index}}" class="vertical order-info-group data-v-0b3b0595">
+                                    <view class="flex justify-between vertical-center data-v-0b3b0595">
+                                        <view class="flex justify-content-start vertical-center data-v-0b3b0595" style="width:75%;">
+                                            <view class="themeTwoBgColor themeTextColor type-style data-v-0b3b0595">自提</view>
+                                            <view class="store-name textGone data-v-0b3b0595" style="max-width:80%;">{{orderItem.storeName}}</view>
+                                        </view>
+                                        <view class="horizontal vertical-center data-v-0b3b0595">
+                                            <view class="data-v-0b3b0595" style="color:#333333;font-size:24rpx;line-height:24rpx;">{{orderItem.stateName}}</view>
+                                            <image class="data-v-0b3b0595" src="https://image.streffy.com/splus/images/p_4_1630724635275.png" style="height:24rpx;width:24rpx;margin-left:12rpx;margin-right:-6rpx;"></image>
+                                        </view>
+                                    </view>
+                                    <view class="order-time-text-desc data-v-0b3b0595">{{'下单时间：'+orderItem.orderTime+''}}</view>
+                                    <view class="order-take-num-group flex justify-between vertical-center data-v-0b3b0595" wx:if="{{orderItem.isShowTackNumUi!=null&&orderItem.isShowTackNumUi}}">
+                                        <view class="vertical data-v-0b3b0595">
+                                            <view class="take-num-ui-text themeTextColor data-v-0b3b0595">{{orderItem.takeNumber==null||orderItem.takeNumber>=10000?'暂无':orderItem.takeNumber}}</view>
+                                            <view class="take-num-ui-desc data-v-0b3b0595">请稍后凭取餐码进行取餐～</view>
+                                        </view>
+                                        <view class="horizontal data-v-0b3b0595">
+                                            <image catchtap="__e" class="data-v-0b3b0595" data-event-opts="{{[ [ 'tap',[ [ 'callPhone',['$0'],['orderItem.hotLine'] ] ] ] ]}}" src="../../static/img/tel.png" style="width:36rpx;height:36rpx;"></image>
+                                            <image catchtap="__e" class="data-v-0b3b0595" data-event-opts="{{[ [ 'tap',[ [ 'navigationGoStore',['$0'],['orderItem'] ] ] ] ]}}" src="../../static/img/position.png" style="width:36rpx;height:36rpx;margin-left:20rpx;"></image>
+                                        </view>
+                                    </view>
+                                    <view class="order-content-group flex justify-between data-v-0b3b0595">
+                                        <view class="horizontal data-v-0b3b0595" style="width:65%;">
+                                            <view class="data-v-0b3b0595" style="height:100rpx;width:100rpx;margin-right:20rpx;" wx:if="{{index<=2}}" wx:for="{{orderItem.productDetail}}" wx:for-item="foodItem">
+                                                <image class="fill-parent data-v-0b3b0595" src="{{foodItem.imgUrl}}" style="border-radius:8rpx;"></image>
+                                            </view>
+                                        </view>
+                                        <view class="vertical data-v-0b3b0595">
+                                            <view class="data-v-0b3b0595" style="text-align:right;margin-top:20rpx;font-size:24rpx;color:#999999;">{{'共'+orderItem.sumNum+'件'}}</view>
+                                            <view class="data-v-0b3b0595" style="text-align:right;margin-top:2rpx;font-size:24rpx;color:#666666;">合计：<text class="data-v-0b3b0595" style="color:#333333;font-size:32rpx;">{{'￥'+orderItem.orderTotal}}</text>
+                                            </view>
+                                        </view>
+                                    </view>
+                                    <view class="flex justify-between data-v-0b3b0595" style="margin-top:30rpx;">
+                                        <view class="data-v-0b3b0595"></view>
+                                        <view class="horizontal data-v-0b3b0595">
+                                            <view class="themeBgColor collocationTextColor center basic-style-button data-v-0b3b0595" data-event-opts="{{[ [ 'tap',[ ['reStartCreateOrder'] ] ] ]}}" wx:if="{{orderItem.status==18||orderItem.status==21||orderItem.status==26||orderItem.status==101}}">感谢购买</view>
+                                            <view catchtap="__e" class="center basic-style-button themeTextColor themeBorderColor data-v-0b3b0595" data-event-opts="{{[ [ 'tap',[ ['delOrder'] ] ] ]}}" wx:if="{{orderItem.status==9999||orderItem.status==118}}">删除订单</view>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </scroll-view>
+                </swiper-item>
+            </swiper>
+        </view>
+    </view>
+</view>

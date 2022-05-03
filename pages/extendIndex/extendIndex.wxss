@@ -1,0 +1,233 @@
+.red-packet {
+    height: 25px;
+    transform-origin: initial;
+    transition-property: top,-webkit-transform;
+    transition-property: transform,top;
+    transition-property: transform,top,-webkit-transform;
+    width: 20px;
+    z-index: 100;
+}
+
+.bg_gif {
+    background-image: url("https://image.streffy.com/StreffyAdminImage/cbd/img/hongbaobianpao.gif");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.top-bannar {
+    background-color: #efefef;
+    height: 34.4%;
+    width: 100%;
+}
+
+.content-group {
+    position: absolute;
+    top: 32.09%;
+    width: 100%;
+}
+
+.basic-style {
+    margin-left: 4%;
+    width: 92%;
+}
+
+.list-view {
+    background-color: #f8f8f8;
+    position: relative;
+}
+
+.member-group {
+    background-color: #fff;
+    border-radius: 16rpx;
+    height: 136rpx;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    position: relative;
+}
+
+.login-button {
+    border-radius: 27rpx;
+    font-size: 20rpx;
+    font-weight: 500;
+    padding: 12rpx 34rpx;
+}
+
+.login-desc {
+    color: #666;
+    font-size: 24rpx;
+    margin-top: 6rpx;
+}
+
+.member-growth-group {
+    background-color: #f8f8f8;
+    border-radius: 8rpx;
+    height: 12rpx;
+    margin-top: 32rpx;
+    width: 404rpx;
+}
+
+.member-growth {
+    border-radius: 8rpx;
+    height: 100%;
+    width: 30%;
+}
+
+.login-remark {
+    color: #333;
+    font-size: 20rpx;
+    font-weight: 500;
+    margin-top: 12rpx;
+}
+
+.member-name {
+    color: #333;
+    font-size: 24rpx;
+    font-weight: 500;
+}
+
+.member-grade {
+    border-radius: 20rpx;
+    font-size: 16rpx;
+    margin-top: 8rpx;
+    padding: 6rpx 16rpx;
+}
+
+.member-name-group {
+    align-items: flex-start;
+    margin-left: 20rpx;
+    text-align: left;
+    width: 178rpx;
+}
+
+.point-text {
+    color: #333;
+    font-size: 28rpx;
+    font-weight: 500;
+    margin-left: 8rpx;
+}
+
+.member-point {
+    color: #333;
+    font-size: 30rpx;
+    font-weight: 700;
+}
+
+.bootom-banner {
+    border-radius: 16rpx;
+    height: 280rpx;
+    margin-bottom: 30rpx;
+    width: 100%;
+}
+
+.order-button-group {
+    background-color: #fff;
+    border-radius: 16rpx;
+    height: 300rpx;
+    margin-top: 20rpx;
+}
+
+.basic-box-shadow {
+    box-shadow: 0 4rpx 4px 0 hsla(0,0%,93%,.5);
+}
+
+.order-button {
+    height: 100%;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    position: relative;
+    width: 50%;
+}
+
+.right-line {
+    background-color: #eee;
+    height: 220rpx;
+    position: absolute;
+    right: 0;
+    top: 40rpx;
+    width: 1rpx;
+}
+
+.order-button-title {
+    color: #333;
+    font-size: 32rpx;
+    font-weight: 700;
+    margin-top: 16rpx;
+}
+
+.order-button-desc {
+    color: #999;
+    font-size: 20rpx;
+    font-weight: 600;
+    margin-top: 10rpx;
+}
+
+.order-button-img {
+    height: 130rpx;
+    width: 130rpx;
+}
+
+.point-button-img {
+    bottom: 30rpx;
+    height: 80rpx;
+    position: absolute;
+    right: 30rpx;
+    width: 80rpx;
+}
+
+.point-shopping-mall-group {
+    margin-bottom: 20rpx;
+    margin-top: 20rpx;
+}
+
+.city-group {
+    background-color: #fff;
+    border-radius: 16rpx;
+    min-height: 190rpx;
+    padding: 30rpx;
+    position: relative;
+    width: 334rpx;
+}
+
+.point-shopping-mall-title {
+    color: #333;
+    font-size: 28rpx;
+    font-weight: 700;
+}
+
+.point-shopping-mall-desc {
+    color: #999;
+    font-size: 20rpx;
+    font-weight: 500;
+    margin-top: 2rpx;
+}
+
+.member-icon {
+    background-color: #f7f7f7;
+    border-radius: 50%;
+    height: 76rpx;
+    position: relative;
+    width: 76rpx;
+}
+
+.member-button {
+    border-right: 3rpx solid #f8f8f8;
+    padding: 0 30rpx;
+}
+
+.member-button-desc {
+    color: #333;
+    font-size: 24rpx;
+    font-weight: 700;
+}
+
+.member-button-title {
+    color: #666;
+    font-size: 18rpx;
+    margin-top: 12rpx;
+}
+
+.bottom-banner-swiper-group {
+    height: 21.35%;
+    width: 100%;
+}

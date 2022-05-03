@@ -1,0 +1,84 @@
+{
+    "pages": [
+        "pages/Store/Store",
+        "pages/menu/menu",
+        "pages/order/order",
+        "pages/confirmOrder/confirmOrder",
+        "pages/extendIndex/extendIndex"
+    ],
+    "window": {
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "茶百道",
+        "navigationBarBackgroundColor": "#FFFFFF",
+        "backgroundColor": "#FFFFFF"
+    },
+    "tabBar": {
+        "color": "#999999",
+        "selectedColor": "#0050C8",
+        "borderStyle": "black",
+        "backgroundColor": "#ffffff",
+        "list": [{
+                "pagePath": "pages/extendIndex/extendIndex",
+                "text": "首页",
+                "iconPath": "static/img/1.png",
+                "selectedIconPath": "static/img/2.png"
+            },
+            {
+                "pagePath": "pages/Store/Store",
+                "text": "点单",
+                "iconPath": "static/img/3.png",
+                "selectedIconPath": "static/img/4.png"
+            },
+            {
+                "pagePath": "pages/order/order",
+                "text": "订单",
+                "iconPath": "static/img/5.png",
+                "selectedIconPath": "static/img/6.png"
+            }
+        ]
+    },
+    "subPackages": [{
+            "root": "subpackagel/",
+            "independent": false,
+            "name": "subpackagel",
+            "pages": [
+                "foodSafety/foodSafety",
+                "ruleText/ruleText",
+                "pointMall/pointMall",
+                "pointOrderDetail/pointOrderDetail",
+                "pointExchangeAll/pointExchangeAll",
+                "addAddress/addAddress",
+                "harvestAddress/harvestAddress",
+                "deliveryList/deliveryList",
+                "pointDetail/pointDetail",
+                "pointsExchangeConfirm/pointsExchangeConfirm"
+            ]
+        },
+        {
+            "root": "subpackages/",
+            "independent": false,
+            "name": "subpackages",
+            "pages": [
+                "ruleDescImg/ruleDescImg",
+                "rechargeHistory/rechargeHistory",
+                "myCoupon/myCoupon",
+                "exchange/exchange",
+                "refundOrder/refundOrder",
+                "storedValue/storedValue",
+                "orderDetails/orderDetails",
+                "remarks/remarks",
+                "integralDetail/integralDetail",
+                "editUser/editUser"
+            ]
+        }
+    ],
+    "permission": {
+        "scope.userLocation": {
+            "desc": "获取位置，匹配附近门店"
+        }
+    },
+    "navigateToMiniProgramAppIdList": [
+        "wxd62dd3067be4d52f"
+    ],
+    "sitemapLocation": "sitemap.json"
+}

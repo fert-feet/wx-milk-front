@@ -1,0 +1,324 @@
+.address-name {
+    color: #999;
+    font-size: 24rpx;
+    margin-top: 8rpx;
+}
+
+.address-icon {
+    background: #0050c8;
+    border-radius: 4rpx;
+    color: #fff;
+    display: inline-block;
+    font-size: 16rpx;
+    height: 32rpx;
+    line-height: 32rpx;
+    text-align: center;
+    width: 84rpx;
+}
+
+.address-desc {
+    color: #333;
+    font-size: 32rpx;
+    font-weight: 500;
+    height: 44rpx;
+    margin-left: 12rpx;
+    width: 384rpx;
+}
+
+.line {
+    background-color: grey;
+    height: 2rpx;
+}
+
+.border-top-gray {
+    border-top: 2rpx solid #f8f8f8;
+}
+
+.border-bottom-gray {
+    border-bottom: 2rpx solid #f8f8f8;
+}
+
+.basic-total {
+    color: #666;
+    font-size: 24rpx;
+    padding: 30rpx 0;
+}
+
+.bottomView {
+    background-color: #fff;
+    bottom: 0;
+    box-shadow: 0 0 4rpx 0 rgba(0,0,0,.15);
+    height: 8%;
+    position: absolute;
+    width: 100%;
+}
+
+.show-car-detail {
+    background-color: #f8f8f8;
+    border-radius: 16rpx;
+    color: #666;
+    font-size: 20rpx;
+    height: 36rpx;
+    line-height: 36rpx;
+    width: 154rpx;
+}
+
+.titleStyle {
+    color: #333;
+    font-size: 32rpx;
+    font-weight: 600;
+}
+
+.remarksStyle {
+    -webkit-box-orient: vertical;
+    border: 1rpx solid #bfbfbf;
+    border-radius: 10rpx;
+    color: grey;
+    display: -webkit-box;
+    font-size: 28rpx;
+    height: 186rpx;
+    margin-top: 27rpx;
+    padding: 26rpx 21rpx;
+    position: relative;
+    word-break: break-all;
+}
+
+.DiscountTotalStyle {
+    color: #333;
+    font-size: 30rpx;
+    text-decoration: line-through;
+}
+
+.parimaryTotalStye {
+    color: #333;
+    font-size: 36rpx;
+}
+
+.confirmStoreBg {
+    background-image: url("http://image.streffy.com/StreffyAdminImage/甜啦啦/confirmstore.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.addressLeft {
+    word-wrap: break-word;
+    color: #999;
+    float: left;
+    font-size: 24rpx;
+    margin-top: 10rpx;
+    text-align: left;
+    width: 400rpx;
+}
+
+.addressRight {
+    border-radius: 4rpx;
+    float: right;
+    font-size: 20rpx;
+    padding: 6rpx 18rpx;
+    width: 145rpx;
+}
+
+.car-group,.pay-group {
+    margin-top: 30rpx;
+}
+
+.basic-group {
+    background-color: #fff;
+    border-radius: 16rpx;
+    padding: 0 30rpx;
+}
+
+.remark-group {
+    height: 100rpx;
+    margin-bottom: 30rpx;
+    margin-top: 30rpx;
+}
+
+.remark-desc {
+    color: #ccc;
+    font-size: 24rpx;
+    justify-content: flex-end;
+    max-width: 58%;
+}
+
+.remark-title {
+    color: #333;
+    font-size: 28rpx;
+    font-weight: 600;
+    width: 40%;
+}
+
+.addPurchaseBtn {
+    border-radius: 8rpx;
+    display: inline-block;
+    line-height: 70rpx;
+    width: 75%;
+}
+
+.productNames {
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.originalPrice {
+    color: #7c7c7c;
+    font-size: 28rpx;
+    text-decoration: line-through;
+}
+
+.alignRight {
+    border-radius: 30rpx;
+    right: -6%;
+}
+
+.alignLeft {
+    border-radius: 30rpx;
+    right: 46%;
+}
+
+.whiteText {
+    color: #fff;
+}
+
+.addPurItem {
+    border-radius: 10rpx;
+    height: 300rpx;
+    margin-bottom: 15rpx;
+    margin-left: 3%;
+    margin-right: 3%;
+    padding: 15rpx 20rpx;
+    width: 94%;
+}
+
+.grayBgColor {
+    background-color: #c7c7c7;
+    color: #747474;
+}
+
+.basic-style,.fn-takeLine {
+    margin-left: 4%;
+    width: 92%;
+}
+
+.fn-takeLine {
+    border-radius: 16rpx;
+    box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,.1),0 2rpx 4rpx 0 rgba(0,0,0,.03);
+    margin-top: 20rpx;
+    padding: 30rpx;
+}
+
+.fn-tel {
+    margin-top: 30rpx;
+}
+
+.fn-paybtn {
+    border-radius: 50rpx;
+    font-size: 28rpx;
+    font-weight: 600;
+    height: 80rpx;
+    line-height: 80rpx;
+    margin-right: 4%;
+    width: 29.33%;
+}
+
+.top-group-view {
+    background-color: #fff;
+    border-radius: 16rpx;
+    margin-top: 38rpx;
+    padding: 30rpx 0rpx;
+}
+
+.authPhoneButton {
+    border: 1rpx solid #666;
+    border-radius: 16rpx;
+    color: #666;
+    font-size: 16rpx;
+    height: 34rpx;
+    margin: 0;
+    padding-left: 12rpx;
+    padding-right: 12rpx;
+}
+
+.recommended-dishes {
+    background-color: #fff;
+    border-radius: 15px;
+    margin-left: 3%;
+    width: 94%;
+}
+
+.recommended-dishes-title {
+    margin-left: 44rpx;
+    margin-top: 22rpx;
+    padding-top: 22rpx;
+}
+
+.recommended-dishes-scroll {
+    width: 100%;
+}
+
+.recommended-addCarshop {
+    height: 100%;
+    overflow: hidden;
+}
+
+.recommended-dishes-addPurItem {
+    border: 2rpx solid #e7e7e7;
+    border-radius: 8rpx;
+    box-shadow: 0 2rpx 6rpx 0 hsla(0,0%,89%,.5);
+    display: inline-block;
+    height: 312rpx;
+    margin-right: 20rpx;
+    margin-top: 30rpx;
+    padding: 20rpx;
+    width: 240rpx;
+}
+
+.addPurItem-active {
+    border: 2rpx solid #0050c8;
+}
+
+.addPurItem-noactive {
+    border: 2rpx solid #e7e7e7;
+}
+
+.recommended-dishes-addPurItem:last-child {
+    margin-right: 0;
+}
+
+.recommended-dishes-image {
+    height: 170rpx;
+}
+
+.recommended-dishes-view {
+    padding-top: 15rpx;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.recommended-dishes-view-add {
+    display: flex;
+    margin-top: 8rpx;
+}
+
+.recommended-dishes-view-many {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.recommended-dishes-view-text {
+    text-align: left;
+    width: 100%;
+}
+
+.textAddcolor {
+    color: #333;
+    font-size: 26rpx;
+    font-weight: 500;
+    margin: 5rpx 0 10rpx;
+    text-align: left;
+}

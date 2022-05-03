@@ -1,0 +1,60 @@
+<view class="container whiteBg">
+
+    <view class="map-group vertical" style="height: 68rpx;">
+        <view class="map-put-away-button center horizontal" style="height: 100%;">
+            <text>选择门店</text>
+        </view>
+    </view>
+    <view class="{{['swiper-wrap-group','swiper-wrap-unRoate-height']}}">
+        <swiper bindchange="__e" circular="{{false}}" class="swiper-wrap" current="{{storeCurrent}}" data-event-opts="{{[ [ 'change',[ [ 'swiperChange',['$event'] ] ] ] ]}}" displayMultipleItems="1">
+            <swiper-item class="swiper-item-view">
+                <scroll-view class="scroll-box" scrollWithAnimation="{{true}}" scrollY="{{true}}">
+                    <view class="vertical-center no-store-view vertical" wx:if="{{storeList==null||storeList.length==0}}">
+                        <image class="collect-img" mode="widthFix" src="https://image.streffy.com/StreffyAdminImage/cbd/img/no_store.png"></image>
+                        <text style="margin-top:40rpx;">当前地区暂时未开放门店~</text>
+                    </view>
+                    <view style="margin-top:30rpx;width:92%;margin-left:4%;" wx:for="{{storeList}}" wx:for-index="index" wx:for-item="item">
+                        <view bindtap="toMenu" data-index="{{index}}" class="{{['store-info','flex','justify-between','',isShowToYou?'themeBorderColor':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'onTakeType',['$0'],['item'] ] ] ] ]}}" style="font-size:22rpx;color:#999999;">
+                            <view class="left-group vertical">
+                                <view class="flex justify-content-start" style="font-size:28rpx;color:#333333;">
+                                    <view catchtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'collectionStore',['$0'],['item'] ] ] ] ]}}" style="width:32rpx;">
+                                        <image src="{{item.isCollection?'https://image.streffy.com/splus/images/p_1_1636032450654.png':'https://image.streffy.com/splus/images/p_1_1636032454822.png'}}" style="width:32rpx;height:32rpx;margin-top:2rpx;"></image>
+                                    </view>
+                                    <view style="{{'margin-left:16rpx;'+(isShowToYou?'max-width: 60%;':'max-width: 90%;')}}">{{''+item.storeName+''}}</view>
+                                </view>
+                                <view class="horizontal flex align-items-center" style="margin-top:16rpx;">
+                                    <view class="themeBgColor now-view center">NOW</view>
+                                    <view class="themeTextColor center" style="margin-left:10rpx;font-size:14rpx;">
+                                        <text>现在下单，无需等待</text>
+                                    </view>
+                                </view>
+                                <view class="horizontal" style="margin-top:16rpx;">
+                                    <view style="width:24rpx;">
+                                        <image src="../../static/img/location.png" style="height:24rpx;width:24rpx;margin-top:5rpx;"></image>
+                                    </view>
+                                    <view style="margin-left:10rpx;max-width:75%;">{{item.address+''}}</view>
+                                </view>
+                                <view class="horizontal" style="margin-top:16rpx;" wx:if="{{item.endTime!=null&&item.endTime!=''}}">
+                                    <view class="center">
+                                        <image src="../../static/img/time.png" style="height:22rpx;width:22rpx;margin-top:4rpx;"></image>
+                                    </view>
+                                    <text style="margin-left:10rpx;max-width:75%;">{{item.beginTime+'~'+item.endTime}}</text>
+                                </view>
+                                <view class="{{['center','',item.status==1?'storeOpens themeTextColor themeBorderColor':'storeCloses']}}">{{''+(item.status==1?'营业中':'休息中')+''}}</view>
+                            </view>
+                            <view class="font3 storeOrderbtn center vertical">
+                                <text style="color:#333333;font-size:24rpx;">去下单</text>
+                                <view class="_br"></view>
+                                <text style="color:#666666;font-size:22rpx;margin-top:4rpx;">{{item.distance+'km'}}</text>
+                                <view class="horizontal center" style="margin-top:20rpx;width:100%;display:flex;justify-content:space-evenly;">
+                                    <image catchtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'callPhone',['$0'],['item.HotLine'] ] ] ] ]}}" src="../../static/img/tel.png" style="width:44rpx;height:44rpx;" wx:if="{{item.hotLine!=null&&item.hotLine!=''}}"></image>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </scroll-view>
+            </swiper-item>
+
+        </swiper>
+    </view>
+</view>

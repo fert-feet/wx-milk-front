@@ -1,0 +1,74 @@
+<view class="container whiteBg">
+    <loading-view bind:__l="__l" isShowLoading="{{isShowGjt}}" vueId="9ad1f540-1"></loading-view>
+    <view catchtap="__e" class="vertical center" data-event-opts="{{[ [ 'tap',[ ['goStore'] ] ] ]}}" style="z-index:2;font-size:32rpx;position:absolute;top:0;background-color:#F8F8F8;padding:4%;height:100%;width:100%;color:#7C7C7C;" wx:if="{{isShowNoStore}}">附近没有正在营业的门店~点我选择其他门店</view>
+    <view class="top-view vertical">
+        <view class="flex justify-between store-orderType-group" wx:if="{{storeInfo!=null}}">
+            <view class="store-name-group vertical" style="width:83%;">
+                <view catchtap="__e" class="store-name horizontal vertical-center" data-event-opts="{{[ [ 'tap',[ ['goStore'] ] ] ]}}" wx:if="{{storeInfo.storeName!=null}}">
+                    <text class="textGone" style="max-width:75%;">{{''+storeInfo.storeName+''}}</text>
+                    <image src="https://image.streffy.com/splus/images/p_1_1630997161708.png" style="margin-left:12rpx;height:24rpx;width:24rpx;"></image>
+                </view>
+            </view>
+            <view class="horizontal gone" style="border:#F8F8F8 solid 2rpx;position:relative;color:#999999;font-size:24rpx;height:54rpx;width:176rpx;background-color:#F8F8F8;border-radius:27rpx;">
+                <view catchtap="__e" class="{{[orderType==2?'whiteText ':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'checkOrderType',[2] ] ] ] ]}}" style="transition:0.3s;z-index:1;font-size:24rpx;width:50%;text-align:center;line-height:54rpx;border-radius:27rpx;">自提</view>
+                <view class="{{['themeBgColor','orderType-background-view',orderType==2?'alignLeft':'alignRight']}}"></view>
+            </view>
+        </view>
+    </view>
+    <view class="menu-group flex justify-between">
+        <view class="menu-list-group vertical">
+            <scroll-view bindscroll="__e" bindscrolltoupper="__e" data-event-opts="{{[ [ 'scroll',[ [ 'VerticalMain',['$event'] ] ] ],[ 'scrolltoupper',[ [ 'scrolltoupper',['$event'] ] ] ] ]}}" scrollAnimationDuration="100" scrollIntoView="{{MainCur}}" scrollWithAnimation="true" scrollY="{{true}}" style="height:100%;">
+                <view style="width:100%;height:240rpx;">
+                    <swiper autoplay="{{autoplay}}" circular="true" class="fill-parent" duration="{{duration}}" indicatorActiveColor="#333333" indicatorColor="#cccccc80" indicatorDots="{{indicatorDots}}" interval="{{interval}}">
+                        <swiper-item wx:for="{{2}}" wx:key="*this">
+                            <image bindtap="__e" class="fill-parent" data-event-opts="{{[ [ 'tap',[ [ 'bannerClick',['$0'],[ [ ['imgUrls','',index] ] ] ] ] ] ]}}" mode="aspectFill" src="../../static/img/banner/{{index}}.jpg" style="border-radius:16rpx;"></image>
+                        </swiper-item>
+                    </swiper>
+                </view>
+                <view class="ProductList" scrollAnimationDuration="100" scrollWithAnimation="true" style="width:100%;" wx:for="{{productListDatas}}" wx:for-index="index" wx:for-item="Item">
+                    <view style="padding-top: 50rpx;">
+                        <view class="horizontal menu-item-group">
+                            <view bindtap="__e" class="menu-item-img-group" data-event-opts="{{[ [ 'tap',[ [ 'ShowProDetail',['$0'],['Item'] ] ] ] ]}}" id="{{'main-'+Item.ProductId}}">
+                                <image bindonError="__e" class="menu-item-img" data-event-opts="{{[ [ 'onError',[ [ 'pImgError',['$0'],['item'] ] ] ] ]}}" mode="aspectFill" src="{{Item.imgUrl}}"></image>
+                            </view>
+                            <view class="vertical menu-item-detail-group">
+                                <view class="item-name">{{''+Item.productName+''}}</view>
+                                <view class="item-remarks textGone" wx:if="{{Item.detailRemarks!=null}}">{{''+Item.detailRemarks+''}}</view>
+                                <view class="flex justify-between vertical-center item-add-button-price-group">
+                                    <view class="item-price">{{'￥'+Item.price}}</view>
+                                    <view class="horizontal vertical-center item-add-button-group">
+                                        <view class="horizontal vertical-center">
+                                            <view bindtap="sub" class="center" data-index="{{index}}" wx:if="{{Item.number!=null&&Item.number>0}}">
+                                                <image src="https://image.streffy.com/splus/images/p_1_1631013011050.png" style="height:45rpx;width:45rpx;"></image>
+                                            </view>
+                                            <view class="item-number" wx:if="{{Item.number!=null&&Item.number>0}}">{{Item.number}}</view>
+                                            <view bindtap="add" class="center" data-index="{{index}}">
+                                                <image src="https://image.streffy.com/StreffyAdminImage/cbd/img/add.png" style="height:45rpx;width:45rpx;"></image>
+                                            </view>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view style="height:300rpx;width:100%;"></view>
+            </scroll-view>
+        </view>
+    </view>
+
+    <!-- 下方 -->
+    <view class="{{['flex','justify-between','','collocationTextColor','foot-view','slide-bottom-show']}}" style="height:39.312px">
+        <view class="horizontal vertical-center">
+            <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'onCartshow',['$event'] ] ] ] ]}}" style="position:relative;margin-right:20rpx;">
+                <image class="cart-img-button" src="https://image.streffy.com/StreffyAdminImage/cbd/img/car.png"></image>
+                <text class="center cart-view-num" wx:if="{{cartNum>0}}">{{cartNum}}</text>
+            </view>
+            <view class="vertical horizontal-center" style="margin-left:30rpx;">
+                <view class="foot-view-orderTotal">{{'￥'+orderTotal}}</view>
+            </view>
+        </view>
+        <view catchtap="goConfirmOrder" class="{{['confirm-order-button','center','collocationTextColor',confirmButtonText=='去结算'?'themeBgColor':'grayBg']}}">{{''+confirmButtonText+''}}</view>
+    </view>
+    <!-- 购物车 -->
+</view>
